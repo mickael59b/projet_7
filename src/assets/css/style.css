@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ---------------------------------------- */
 /* ==              FONT                 */
 /*---------------------------------------- */
@@ -29,8 +30,26 @@ header ul.menu {
   display: flex;
   gap: 57px;
 }
+header ul li {
+  position: relative; /* Positionnement relatif pour l'élément li */
+}
 header ul li a {
   text-decoration: none;
+  color: #000000;
+  font-size: 24px;
+}
+header ul li a.active::after {
+  width: 100%; /* Barre pleine largeur sous le lien actif */
+}
+header ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Ajustement pour la position de la barre */
+  left: 0;
+  width: 0;
+  height: 2px; /* Hauteur de la barre */
+  background-color: black; /* Couleur de la barre */
+  transition: width 0.3s ease-in-out; /* Transition fluide */
 }
 
 .banner {
@@ -39,7 +58,6 @@ header ul li a {
   text-align: center;
   color: white;
   border-radius: 25px;
-  opacity: 60%;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 5px 15px rgb(66, 58, 58);
@@ -50,6 +68,15 @@ header ul li a {
   object-fit: cover;
   width: 100%;
   height: 223px;
+  border-radius: 25px;
+}
+.banner__sombre {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 25px;
 }
 .banner .banner-text {
@@ -226,6 +253,23 @@ main {
   margin-top: 20px;
 }
 
+.error_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FF6060;
+  gap: 139px;
+}
+.error_container .text_404 {
+  font-size: 288px;
+  font-weight: 700;
+  width: 597px;
+  height: 263px;
+}
+.error_container p {
+  padding-bottom: 25px;
+  text-align: center;
+}
 .infos_collapse {
   display: flex;
   justify-content: space-between;
@@ -284,6 +328,9 @@ footer .text_copyright p {
   header ul.menu {
     gap: 26px;
   }
+  header ul.menu li a {
+    font-size: 12px;
+  }
   main {
     padding: 0 25px 25px 25px;
   }
@@ -292,6 +339,9 @@ footer .text_copyright p {
   }
   main .banner img {
     height: 111px;
+    border-radius: 10px;
+  }
+  main .banner__sombre {
     border-radius: 10px;
   }
   main .banner .banner-text {
@@ -350,6 +400,14 @@ footer .text_copyright p {
   }
   main .infos_container .host .ratings img {
     height: 18px;
+  }
+  main .error_container {
+    gap: 113px;
+  }
+  main .error_container .text_404 {
+    width: 198px;
+    height: 99px;
+    font-size: 96px;
   }
   main .infos_collapse {
     display: block;

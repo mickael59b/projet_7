@@ -1,18 +1,37 @@
-import logo from '../assets/images/logo.png'; // Assurez-vous que le chemin est correct
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Import des composants nécessaires
+import logo from '../assets/images/logo.png';
 
 function Header() {
+    const location = useLocation(); // Utilisation de useLocation pour obtenir le chemin actuel
+    const [activeLink, setActiveLink] = useState(location.pathname);
+
     return (
-            <header>
-                <div className="logo">
-                    <img src={logo} alt="Logo" /> {/* Corrigé : le src et le alt sont maintenant correctement utilisés */}
-                </div>
-                <nav>
-                    <ul className='menu'>
-                        <li><a href="/">Accueil</a></li> {/* Ajouté : liens pour navigation */}
-                        <li><a href="/about">A Propos</a></li>
-                    </ul>
-                </nav>
-            </header>
+        <header>
+            <div className="logo">
+                <img src={logo} alt="Logo" />
+            </div>
+            <nav>
+                <ul className='menu'>
+                    <li>
+                        <Link
+                            to="/"
+                            className={location.pathname === "/" ? "active" : ""}
+                        >
+                            Accueil
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/about"
+                            className={location.pathname === "/about" ? "active" : ""}
+                        >
+                            A Propos
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     );
 }
 

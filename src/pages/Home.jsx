@@ -26,7 +26,7 @@ function Home() {
     }, []);
 
     // Limiter à 6 logements
-    const displayedLogements = logements.slice(0, 6);
+    const displayedLogements = logements.slice(0, 12);
 
     return (
         <div className='main-container'>
