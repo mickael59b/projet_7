@@ -297,9 +297,31 @@ main {
   justify-content: space-between;
   width: 100%;
 }
+.dropdown img.dropdown-icon {
+  transition: transform 0.5s ease; /* Transition fluide pour la rotation */
+}
+.dropdown .dropdown-icon-close {
+  transform: rotate(0deg); /* Rotation par défaut (fermé) */
+}
+.dropdown .dropdown-icon-open {
+  transform: rotate(-180deg); /* Rotation lorsque le menu est ouvert */
+  rotate: -180deg;
+}
 .dropdown .dropdown-content {
   background-color: #f7f7f7;
-  padding: 10px;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease; /* Transition pour la hauteur et le padding */
+  transform: translateY(-20px); /* Déplace le contenu vers le haut pour commencer l'animation */
+}
+.dropdown .dropdown-content.open {
+  max-height: 500px; /* Ajustez cette valeur selon la taille de votre contenu */
+  padding: 10px; /* Rétablir le padding lors de l'ouverture */
+  transform: translateY(0); /* Remet le contenu en place lors de l'ouverture */
+}
+.dropdown .dropdown-content.close {
+  max-height: 0; /* Réduit la hauteur lorsque le menu se ferme */
+  padding: 0; /* Réduit le padding pour un effet de fermeture fluide */
+  transform: translateY(0px); /* Déplace le contenu vers le haut pour l'animation de fermeture */
 }
 
 footer {

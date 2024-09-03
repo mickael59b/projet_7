@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import OpenIcon from '../assets/images/open_icon.png'; // Image pour l'état ouvert
-import CloseIcon from '../assets/images/close_icon.png'; // Image pour l'état fermé
+import CloseIcon from '../assets/images/close_icon.png'; // Icône pour l'état fermé
+import OpenIcon from '../assets/images/open_icon.png'; // Icône pour l'état ouvert
 
 const Dropdown = ({ title, children }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false); // Menu fermé par défaut
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -13,15 +13,13 @@ const Dropdown = ({ title, children }) => {
                 {title}
                 <img
                     src={isOpen ? OpenIcon : CloseIcon}
-                    alt={isOpen ? 'Open' : 'Close'}
-                    className="dropdown-icon"
+                    alt={isOpen ? "Open Icon" : "Close Icon"}
+                    className={`dropdown-icon ${isOpen ? 'dropdown-icon-open' : 'dropdown-icon-close'}`}
                 />
             </button>
-            {isOpen && (
-                <div className="dropdown-content">
-                    {children}
-                </div>
-            )}
+            <div className={`dropdown-content ${isOpen ? 'open' : 'close'}`}>
+                {children}
+            </div>
         </div>
     );
 };
