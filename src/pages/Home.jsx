@@ -4,6 +4,7 @@ import Header from '../composants/Header';
 import Footer from '../composants/Footer';
 import imgbannerhome from '../assets/images/banner-home.jpg';
 import Banner from '../composants/Banner';
+import Card from '../composants/Card';
 
 function Home() {
     const [logements, setLogements] = useState([]);
@@ -37,12 +38,7 @@ function Home() {
                     text="Chez vous, partout et ailleurs"  />
                 <section className='gallery'>
                     {displayedLogements.map((logement) => (
-                        <div className='thumb' key={logement.id}>
-                            <Link to={`/detail/${logement.id}`}>
-                                <img src={logement.cover} alt={logement.title} />
-                                <h3>{logement.title}</h3>
-                            </Link>
-                        </div>
+                        <Card key={logement.id} id={logement.id} cover={logement.cover} title={logement.title}/>
                     ))}
                 </section>
             </main>
