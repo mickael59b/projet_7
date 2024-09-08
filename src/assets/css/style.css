@@ -218,19 +218,19 @@ main {
   padding: 12px;
   text-align: center;
 }
-.infos_container .host {
+.infos_container .infos_avatar .host {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.infos_container .host .infos_prop {
+.infos_container .infos_avatar .host .infos_prop {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.infos_container .host .infos_prop .title_name {
+.infos_container .infos_avatar .host .infos_prop .title_name {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -240,13 +240,13 @@ main {
   color: #ff6060;
   width: 93px;
 }
-.infos_container .host .infos_prop .avatar img {
+.infos_container .infos_avatar .host .infos_prop .avatar img {
   border-radius: 50%;
   height: 64px;
   object-fit: cover;
   width: 64px;
 }
-.infos_container .host .ratings {
+.infos_container .infos_avatar .ratings {
   align-items: center;
   display: flex;
   justify-content: flex-end;
@@ -269,7 +269,13 @@ main {
 .error_container p {
   padding-bottom: 25px;
   text-align: center;
+  font-size: 36px;
 }
+.error_container a {
+  color: #000000;
+  font-size: 18px;
+}
+
 .infos_collapse {
   display: flex;
   justify-content: space-between;
@@ -402,25 +408,26 @@ footer .text_copyright p {
     margin-top: 0;
     flex-wrap: wrap;
   }
-  main .infos_container .host {
+  main .infos_container .infos_avatar {
+    display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
   }
-  main .infos_container .host .infos_prop {
+  main .infos_container .infos_avatar .host .infos_prop {
     align-content: center;
     margin-top: 20px;
   }
-  main .infos_container .host .infos_prop .title_name {
+  main .infos_container .infos_avatar .host .infos_prop .title_name {
     font-size: 12px;
     height: 33px;
     width: 93px;
     align-content: center;
   }
-  main .infos_container .host .infos_prop .avatar img {
+  main .infos_container .infos_avatar .host .infos_prop .avatar img {
     height: 32px;
     width: 32px;
   }
-  main .infos_container .host .ratings img {
+  main .infos_container .infos_avatar .ratings img {
     height: 18px;
   }
   main .error_container {
@@ -430,6 +437,12 @@ footer .text_copyright p {
     width: 198px;
     height: 99px;
     font-size: 96px;
+  }
+  main .error_container p {
+    font-size: 18px;
+  }
+  main .error_container a {
+    font-size: 14px;
   }
   main .infos_collapse {
     display: block;
