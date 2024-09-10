@@ -7,6 +7,7 @@ import Dropdown from '../composants/Dropdown';
 import ImageSlider from '../composants/ImageSlider';
 import HostInfo from '../composants/HostInfo';
 import Ratings from '../composants/Ratings';
+import Tags from '../composants/Tags'; // Import du nouveau composant
 
 function Detail() {
     const { id } = useParams();
@@ -65,11 +66,8 @@ function Detail() {
                         <div className='infos'>
                             <h1>{title}</h1>
                             <p>{location}</p>
-                            <div className='tags'>
-                                {tags && tags.length > 0 && tags.map((tag, index) => (
-                                    <span key={index} className='tag'>{tag}</span>
-                                ))}
-                            </div>
+                            {/* Utilisation du composant Tags */}
+                            <Tags tags={tags} />
                         </div>
                         <div className='infos_avatar'>
                             <HostInfo host={host} />
@@ -96,3 +94,4 @@ function Detail() {
 }
 
 export default Detail;
+

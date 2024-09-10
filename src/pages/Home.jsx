@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../composants/Header';
 import Footer from '../composants/Footer';
 import imgbannerhome from '../assets/images/banner-home.jpg';
@@ -26,9 +25,6 @@ function Home() {
         fetchLogements();
     }, []);
 
-    // Limiter à 6 logements
-    const displayedLogements = logements.slice(0, 12);
-
     return (
         <div className='main-container'>
             <Header />
@@ -37,7 +33,7 @@ function Home() {
                     backgroundImage={imgbannerhome}
                     text="Chez vous, partout et ailleurs"  />
                 <section className='gallery'>
-                    {displayedLogements.map((logement) => (
+                    {logements.map((logement) => (
                         <Card key={logement.id} id={logement.id} cover={logement.cover} title={logement.title}/>
                     ))}
                 </section>
@@ -48,3 +44,4 @@ function Home() {
 }
 
 export default Home;
+

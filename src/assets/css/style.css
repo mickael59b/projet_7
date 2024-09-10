@@ -343,6 +343,7 @@ footer {
 }
 footer .text_copyright p {
   font-size: 24px;
+  text-align: center;
 }
 
 /* media query */
