@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-const Card = ({ key, id, cover, title }) => {
+const Card = ({ id, cover, title }) => {
   return (
-    <div className="thumb" key={key}>
+    <div className="thumb">
       <Link to={`/detail/${id}`}>
         <img src={cover} alt={title} />
         <h3>{title}</h3>

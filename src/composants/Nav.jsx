@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 function Nav() {
-    const location = useLocation(); // Utilisation de useLocation pour obtenir le chemin actuel
+    const location = useLocation(); 
 
     return (
         <nav>
@@ -23,7 +23,6 @@ function Nav() {
                         A Propos
                     </Link>
                 </li>
-                {/* Ajout d'autres liens si nécessaire */}
             </ul>
         </nav>
     );

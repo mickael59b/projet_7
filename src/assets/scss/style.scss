@@ -104,7 +104,7 @@ main{
     & .thumb {
         position: relative;
         height: 340px;
-        width: 100%;
+        width: auto;
         background: linear-gradient(to bottom, #FFFFFF 0%, #0A0A0A 0%, #040404 20.5%, #000000 50%);
         border-radius: 10px;
 
@@ -121,7 +121,8 @@ main{
             bottom: 0;
             color: #FFFFFF;
             margin: 20px;
-            width: 100px;
+            width: auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre derrière le texte */
         }
     }
 }
@@ -370,7 +371,7 @@ footer {
 /* media query */
 @media (max-width:795px){
     header{
-        margin: 20px;
+        margin: 30px;
         .logo{
             img{
                 width: 145px;
@@ -408,7 +409,7 @@ footer {
             padding: 0;
             gap: 22px;
             .thumb{
-                height: 255px;
+                height: 100%;
             }
         }
         #banner{
